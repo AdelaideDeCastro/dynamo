@@ -1,0 +1,18 @@
+$(document).ready(function() {
+    // Function: add active class for the links in the menu
+    $('#menu-header_menu .menu-item').removeClass('active');
+    $('#menu-header_menu .menu-item.current-menu-item').addClass('active');
+
+
+    // Function: add active_charts to the bar charts
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 600) {
+            $(".charts_container").addClass("active_charts");
+        } else {
+            $(".charts_container").removeClass("active_charts");
+        }
+    });
+
+});
