@@ -62,3 +62,9 @@ function machine_init() {
     flush_rewrite_rules();
 }
 add_action('init', 'machine_init');
+
+// Function to remove meta generator tag
+function dynamo_remove_version() {
+    return '';   
+}
+add_filter('the_generator', 'dynamo_remove_version');
