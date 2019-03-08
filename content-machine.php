@@ -14,7 +14,9 @@
         </div>
         <div class="col-12 col-md-6">
             <div class="machine-information mt-5">
-                <h3><?php the_title(); ?></h3>
+                <?php
+                    the_title(sprintf('<h3 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h3>');
+                ?>
                 <ul>
                     <?php
                         $machineInfo = get_post_meta(get_the_ID(), 'wpcf-machine-general-info', false);
